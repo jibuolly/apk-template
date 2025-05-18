@@ -1,9 +1,5 @@
 name: Build Android APK
 
-permissions:
-  contents: read
-  actions: read
-
 on:
   push:
     branches:
@@ -11,27 +7,25 @@ on:
 
 jobs:
   build:
-    name: Build APK
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up JDK 11
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '11'
 
-      - name: Grant execute permission to gradlew
+      - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Build APK
+      - name: Build debug APK
         run: ./gradlew assembleDebug
 
-      - name: Upload APK
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v3
         with:
-          name: WebViewApp-APK
+          name: MyApp
           path: app/build/outputs/apk/debug/app-debug.apk
