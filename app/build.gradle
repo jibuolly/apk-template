@@ -4,12 +4,13 @@ android {
     compileSdkVersion 31
 
     defaultConfig {
-        applicationId "com.example.app"
+        applicationId "com.wixify.android"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
