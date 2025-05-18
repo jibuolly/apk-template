@@ -31,7 +31,7 @@ jobs:
         run: ./gradlew assembleDebug
 
       - name: Upload APK
-        uses: actions/upload-artifact@e7a8a9d89e4bb900e204f6e397c1fdd1b9b58c8d
+        uses: actions/upload-artifact@v3
         with:
           name: WebViewApp-APK
           path: app/build/outputs/apk/debug/app-debug.apk
