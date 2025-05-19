@@ -1,4 +1,4 @@
-package com.example.app;
+package com.wixify.android;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
