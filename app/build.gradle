@@ -29,5 +29,4 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
 
-#Fix build.gradle with stable config
-
+// Fix Gradle comment issue
