@@ -21,10 +21,7 @@ public class MainActivity extends Activity {
         mWebView.setWebViewClient(new android.webkit.WebViewClient());
 
         // REMOTE RESOURCE
-        // mWebView.loadUrl("https://example.com");
-
-        // LOCAL RESOURCE
-        // mWebView.loadUrl("file:///android_asset/index.html");
+        mWebView.loadUrl("https://wixify.in");  // ✅ your live site here
     }
 
     @Override
