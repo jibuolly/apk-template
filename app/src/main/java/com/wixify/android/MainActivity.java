@@ -5,14 +5,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
     private WebView mWebView;
 
-    @SuppressLint("SetJavaScriptEnabled")
     @Override
+    @SuppressLint("SetJavaScriptEnabled")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -23,14 +22,9 @@ public class MainActivity extends Activity {
         webSettings.setJavaScriptEnabled(true);
 
         // ✅ Fixed: Prevents refresh and handles internal links correctly
-        mWebView.setWebViewClient(new MyWebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
+        mWebView.setWebViewClient(new MyWebViewClient());
 
+        // 🌐 Load your site
         mWebView.loadUrl("https://wixify.in");
     }
 
