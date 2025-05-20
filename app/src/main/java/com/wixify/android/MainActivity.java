@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         webSettings.setJavaScriptEnabled(true);
 
         // ✅ Fixed: Prevents refresh and handles internal links correctly
-        mWebView.setWebViewClient(new WebViewClient() {
+        mWebView.setWebViewClient(new MyWebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
