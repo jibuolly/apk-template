@@ -20,8 +20,7 @@ public class MainActivity extends Activity {
         webSettings.setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new android.webkit.WebViewClient());
 
-        // REMOTE RESOURCE
-        mWebView.loadUrl("https://wixify.in");  // ✅ your live site here
+        mWebView.loadUrl("https://wixify.in");
     }
 
     @Override
