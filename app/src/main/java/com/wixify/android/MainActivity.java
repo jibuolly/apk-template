@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
@@ -22,7 +23,7 @@ public class MainActivity extends Activity {
         webSettings.setJavaScriptEnabled(true);
 
         // ✅ Fixed: Prevents refresh and handles internal links correctly
-        mWebView.setWebViewClient(new MyWebViewClient());
+        mWebView.setWebViewClient(new WebViewClient());
 
         // 🌐 Load your site
         mWebView.loadUrl("https://wixify.in");
