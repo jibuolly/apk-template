@@ -22,11 +22,13 @@ public class MainActivity extends Activity {
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        // ✅ Fixed: Prevents refresh and handles internal links correctly
         mWebView.setWebViewClient(new WebViewClient());
 
-        // 🌐 Load your site
-        mWebView.loadUrl("https://wixify.in");
+        String inputUrl = "REPLACE_ME";  // will be replaced via sed
+        if (!inputUrl.startsWith("http://") && !inputUrl.startsWith("https://")) {
+            inputUrl = "https://" + inputUrl;
+        }
+        mWebView.loadUrl(inputUrl);
     }
 
     @Override
